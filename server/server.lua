@@ -39,6 +39,9 @@ AddEventHandler('createVehicleKey', function(plate)
         xPlayer.addInventoryItem(ITEM, 1, metadata)
         
         TriggerClientEvent('ox_lib:notify', source, { type = 'success', title = _("successkey"), position = 'top' })
+        
+        local message = "**Steam:** " .. GetPlayerName(source) .. "\n**Identifier:** " .. xPlayer.identifier .. "\n**ID:** " .. source .. "\n**Log:** The player had a key made for the vehicle with registration number " .. plate .. "."
+        discordLog(message, Webhook) 
     else
         TriggerClientEvent('ox_lib:notify', source, { type = 'error', title = _("nomoney"), position = 'top' })
     end
@@ -74,3 +77,7 @@ RegisterServerCallback('azakit_vehiclekey:PlayerLockCars', function(source, cb, 
         end)
     end
 end)
+
+function discordLog(message, webhook)
+    PerformHttpRequest(webhook, function(err, text, headers) end, 'POST', json.encode({username = 'AzakitBOT', embeds = {{["description"] = "".. message .."",["footer"] = {["text"] = "Azakit Development - https://discord.com/invite/DmsF6DbCJ9",["icon_url"] = "https://cdn.discordapp.com/attachments/1150477954430816456/1192512440215277688/azakitdevelopmentlogoavatar.png?ex=65a958c1&is=6596e3c1&hm=fc6638bef39209397047b55d8afbec6e8a5d4ca932d8b49aec74cb342e2910dc&",},}}, avatar_url = "https://cdn.discordapp.com/attachments/1150477954430816456/1192512440215277688/azakitdevelopmentlogoavatar.png?ex=65a958c1&is=6596e3c1&hm=fc6638bef39209397047b55d8afbec6e8a5d4ca932d8b49aec74cb342e2910dc&"}), { ['Content-Type'] = 'application/json' })
+end
