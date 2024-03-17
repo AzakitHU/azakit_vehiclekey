@@ -137,3 +137,21 @@ Citizen.CreateThread(function()
 		end
 	end
 end)
+
+local engineRunning = false
+
+Citizen.CreateThread(function()
+    while true do
+        Citizen.Wait(0)
+
+        local playerPed = PlayerPedId()
+        local vehicle = GetVehiclePedIsIn(playerPed, false)
+
+        if IsControlJustReleased(0, EngineKey) then
+            if DoesEntityExist(vehicle) and IsPedInAnyVehicle(playerPed, false) then
+                engineRunning = not engineRunning
+                SetVehicleEngineOn(vehicle, engineRunning, false, true)
+            end
+        end
+    end
+end)
