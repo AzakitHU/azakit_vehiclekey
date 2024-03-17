@@ -25,8 +25,8 @@ RegisterServerEvent('createVehicleKey')
 AddEventHandler('createVehicleKey', function(plate)
     local xPlayer = ESX.GetPlayerFromId(source)
 
-    if xPlayer.getMoney() >= Config.KeyPrice then
-        xPlayer.removeMoney(Config.KeyPrice) 
+    if xPlayer.getMoney() >= KeyPrice then
+        xPlayer.removeMoney(KeyPrice) 
 
         local metadata = {
             type = ITEM,
