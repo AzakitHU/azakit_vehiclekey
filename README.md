@@ -7,6 +7,7 @@ Create unique keys for vehicles and even give them to your partner so that he ca
 * You can only create a key for your own vehicle
 * The keys are unique, the vehicle registration number is stored in meta data
 * You can open/lock your own vehicle even without a key. This can be set in the configuration file.
+* Discord Webhook about key purchase
 
 # Preview
 https://www.youtube.com/watch?v=0QgNZFyCHgI
