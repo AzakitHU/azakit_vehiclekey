@@ -1,4 +1,4 @@
-# Vehicle key and lock
+# Vehiclekey and lock
 Create unique keys for vehicles and even give them to your partner so that he can also open/lock the vehicle.
 
 * Easy configuration
