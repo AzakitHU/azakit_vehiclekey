@@ -57,7 +57,6 @@ RegisterServerCallback('azakit_vehiclekey:PlayerLockCars', function(source, cb, 
         for _, item in pairs(inventoryItems) do
           --  print(item.metadata.plate)
             if item.name == ITEM and item.metadata and item.metadata.plate == plate then
-              --  print(hasMatchingKey)
                 hasMatchingKey = true
                 break
          end
