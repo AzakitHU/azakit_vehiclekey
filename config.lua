@@ -2,8 +2,8 @@ LANGUAGE = 'en'
 Config = {}
 
 KeyPrice = 150 -- The price of creating a key
-LockKey = 303 -- [U] - opening/closing of vehicle
-EngineKey = 47 -- [G] - engine start/stop
+LockKey = 'U'-- default opening/closing of vehicle
+EngineKey = 'G' -- default engine start/stop
 
 ITEM = "vehicle_key"  -- The basic vehicle key item. Meta data will always be added to this.
 OWNER = false  -- If this is true, then the owner of the vehicle can open/lock his car without a vehicle_key item
