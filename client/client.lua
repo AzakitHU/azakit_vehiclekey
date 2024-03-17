@@ -131,7 +131,7 @@ Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(0)
 
-		if IsControlJustReleased(0, Config.lockkey) and IsInputDisabled(0) then
+		if IsControlJustReleased(0, LockKey) and IsInputDisabled(0) then
 			VehicleLock()
 			Citizen.Wait(300)
 		end
