@@ -127,31 +127,29 @@ function VehicleLock()
 	end, ESX.Math.Trim(GetVehicleNumberPlateText(vehicle)))
 end
 
-Citizen.CreateThread(function()
-	while true do
-		Citizen.Wait(0)
+RegisterCommand('lockVehicleFromServer', function()    
+    VehicleLock()
+end, false)
 
-		if IsControlJustReleased(0, LockKey) and IsInputDisabled(0) then
-			VehicleLock()
-			Citizen.Wait(300)
-		end
-	end
-end)
+RegisterKeyMapping('lockVehicleFromServer', 'Use the vehicle key', 'keyboard', LockKey)
 
-local engineRunning = false
+RegisterCommand('toggleengine', function()
+    ToggleVehicleEngine()
+end, false)
 
-Citizen.CreateThread(function()
-    while true do
-        Citizen.Wait(0)
+RegisterKeyMapping('toggleengine', 'Toggle Vehicle Engine', 'keyboard', EngineKey)
 
-        local playerPed = PlayerPedId()
-        local vehicle = GetVehiclePedIsIn(playerPed, false)
+function ToggleVehicleEngine()
+    local playerPed = PlayerPedId()
+    local vehicle = GetVehiclePedIsIn(playerPed, false)
 
-        if IsControlJustReleased(0, EngineKey) then
-            if DoesEntityExist(vehicle) and IsPedInAnyVehicle(playerPed, false) then
-                engineRunning = not engineRunning
-                SetVehicleEngineOn(vehicle, engineRunning, false, true)
-            end
+    if DoesEntityExist(vehicle) and IsPedInAnyVehicle(playerPed, false) then
+        local engineRunning = GetIsVehicleEngineRunning(vehicle)
+
+        if engineRunning then
+            SetVehicleEngineOn(vehicle, false, false, true)
+        else
+            SetVehicleEngineOn(vehicle, true, false, true)
         end
     end
-end)
+end
