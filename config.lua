@@ -6,9 +6,6 @@ LockKey = 'U'-- default opening/closing of vehicle
 EngineKey = 'G' -- default engine start/stop
 
 ITEM = "vehicle_key"  -- The basic vehicle key item. Meta data will always be added to this.
-LOCKPICK_DOOR = "lockpick"  -- item needed to break a door
-LOCKPICK_ENGINE = "lockpick"  -- item needed to hack engine
-LOCKPICK_ENGINE_REMOVE = false -- If true, you will lose the item when hacking the engine
 OWNER = false  -- If this is true, then the owner of the vehicle can open/lock his car without a vehicle_key item
 
 START_NPC = {
