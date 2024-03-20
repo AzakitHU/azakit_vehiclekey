@@ -44,9 +44,9 @@ https://www.youtube.com/watch?v=0QgNZFyCHgI
 - esx_vehicleshop (The script reads the vehicle registration number from the owned_vehicles mysql table.)
 
 #UPDATE
--Added vehicle lockpicking (OX_TAERGET & OX_LIB Skill Check)
--Added engine start with key or lockpick
--Added animations
+- Added vehicle lockpicking (OX_TAERGET & OX_LIB Skill Check)
+- Added engine start with key or lockpick
+- Added animations
 
 # Documentation
 You can find [Discord](https://discord.gg/DmsF6DbCJ9).
