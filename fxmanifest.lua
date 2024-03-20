@@ -3,7 +3,7 @@ game "gta5"
 lua54 'yes'
 
 name         'azakit_vehiclekey'
-version      '1.0.0'
+version      '1.1.0'
 author 'Azakit'
 description 'Vehicle key and lock'
 
