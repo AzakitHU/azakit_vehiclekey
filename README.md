@@ -8,6 +8,8 @@ Create unique keys for vehicles and even give them to your partner so that he ca
 * The keys are unique, the vehicle registration number is stored in meta data
 * You can open/lock your own vehicle even without a key. This can be set in the configuration file.
 * Discord Webhook about key purchase
+* Vehicle lockpicking (OX_TAERGET & OX_LIB Skill Check)
+* Engine start with key or lockpick
 
 # Preview
 https://www.youtube.com/watch?v=0QgNZFyCHgI
@@ -25,6 +27,14 @@ https://www.youtube.com/watch?v=0QgNZFyCHgI
 		close = true,
 		description = nil
 	},
+ 
+	['lockpick'] = {
+		label = 'lockpick',
+		weight = 15,
+		stack = true,
+		close = true,
+		description = nil
+	},
 
 # Requirements
 - ESX
@@ -32,6 +42,11 @@ https://www.youtube.com/watch?v=0QgNZFyCHgI
 - ox_target
 - ox_inventory
 - esx_vehicleshop (The script reads the vehicle registration number from the owned_vehicles mysql table.)
+
+#UPDATE
+-Added vehicle lockpicking (OX_TAERGET & OX_LIB Skill Check)
+-Added engine start with key or lockpick
+-Added animations
 
 # Documentation
 You can find [Discord](https://discord.gg/DmsF6DbCJ9).
