@@ -12,7 +12,7 @@ Create unique keys for vehicles and even give them to your partner so that he ca
 * Discord Webhook about key purchase
 
 # Preview
-https://www.youtube.com/watch?v=0QgNZFyCHgI
+https://www.youtube.com/watch?v=SRAdGghP88g
 
 # Install
 - Download the [repository](https://github.com/AzakitHU/azakit_vehiclekey).
