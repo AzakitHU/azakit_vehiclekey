@@ -1,7 +1,7 @@
 ESX = nil
 StartNPC, HasGold = {},
 
-TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+ESX = exports["es_extended"]:getSharedObject()
 
 Citizen.CreateThread(function()
     StartNPC = SpawnNPC(START_NPC.ped.model, START_NPC.ped.coords, START_NPC.ped.heading)
