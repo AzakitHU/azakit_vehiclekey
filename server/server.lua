@@ -2,7 +2,8 @@ ESX = nil
 
 ESX = exports["es_extended"]:getSharedObject()
 
-ESX.RegisterServerCallback('getOwnedVehicles', function(source, cb)
+ESX.RegisterServerCallback('getOwnedVehicles', function(source, cb)        
+    Wait(1000)
     local xPlayer = ESX.GetPlayerFromId(source)
 
     MySQL.Async.fetchAll('SELECT * FROM owned_vehicles WHERE owner = @owner', {
