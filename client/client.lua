@@ -19,12 +19,23 @@ Citizen.CreateThread(function()
 end)
 
 local ownedVehicles = {}
-
-ESX.TriggerServerCallback('getOwnedVehicles', function(vehicles)
-    ownedVehicles = vehicles
-end)
-
 local vehicles = {}
+
+CreateThread(function()
+    while ESX == nil do
+        TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+        Wait(0)
+    end
+
+    while not ESX.IsPlayerLoaded() do
+        Wait(500)
+    end
+
+    ESX.TriggerServerCallback('getOwnedVehicles', function(vehicles)
+        ownedVehicles = vehicles
+        print("Játékos járművei betöltve: "..#ownedVehicles)
+    end)
+end)
 
 RegisterNetEvent('azakit_vehiclekey:openVehicleKeyMenu')
 AddEventHandler('azakit_vehiclekey:openVehicleKeyMenu', function()
@@ -331,3 +342,4 @@ function ToggleVehicleEngine()
         end
     end, ESX.Math.Trim(GetVehicleNumberPlateText(vehicle)))  
 end
+
