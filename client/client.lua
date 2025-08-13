@@ -33,7 +33,6 @@ CreateThread(function()
 
     ESX.TriggerServerCallback('getOwnedVehicles', function(vehicles)
         ownedVehicles = vehicles
-        print("Játékos járművei betöltve: "..#ownedVehicles)
     end)
 end)
 
@@ -342,4 +341,5 @@ function ToggleVehicleEngine()
         end
     end, ESX.Math.Trim(GetVehicleNumberPlateText(vehicle)))  
 end
+
 
